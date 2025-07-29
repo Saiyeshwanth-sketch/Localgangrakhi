@@ -1,0 +1,152 @@
+body {
+  font-family: 'Peace Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff8f0;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: #ffdde0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.product {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #ff6978;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 5px 10px;
+  background-color: #ff6978;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upi-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.upi-image {
+  max-width: 220px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+#whatsapp-contact {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.whatsapp-link {
+  color: #25D366;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-form {
+  text-align: center;
+  margin: 2rem;
+}
+
+.order-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.order-form input,
+.order-form textarea,
+.order-form button {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.order-form button {
+  background-color: #ff6978;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#formStatus {
+  margin-top: 10px;
+  color: green;
+}
