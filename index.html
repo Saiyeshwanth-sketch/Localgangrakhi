@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Gang Rakhi</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Local Gang Rakhi</h1>
+    <section id="products" class="product-grid"></section>
+  </header>
+
+  <!-- UPI Section -->
+  <section class="upi-section">
+    <h2>Scan & Pay</h2>
+    <img src="https://i.ibb.co/ynypRr55/Screenshot-20250728-175415.png" alt="UPI QR" class="upi-image">
+    <p>Or send to UPI ID: <strong>7702442422@ibl</strong></p>
+  </section>
+
+  <!-- WhatsApp Contact -->
+  <section id="whatsapp-contact">
+    <a href="https://wa.me/917702442422" target="_blank" class="whatsapp-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="24" />
+      Contact for more Rakhis: 7702442422
+    </a>
+  </section>
+
+  <!-- Order Form -->
+  <section class="order-form">
+    <h2>Place Your Order</h2>
+    <form id="orderForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="phone" placeholder="WhatsApp Number" required />
+      <textarea name="address" placeholder="Full Address" required></textarea>
+
+      <!-- Hidden fields for JS to populate -->
+      <input type="hidden" name="orderItems" id="orderItems" />
+      <input type="hidden" name="orderTotal" id="orderTotal" />
+
+      <button type="submit">Send Order</button>
+      <p id="formStatus"></p>
+    </form>
+  </section>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img id="fullImg" class="modal-content" />
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
