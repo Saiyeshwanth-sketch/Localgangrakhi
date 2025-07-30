@@ -44,7 +44,7 @@ const products = [
   },
   {
     name: "Big Bro Rakhi",
-    price: 0,
+    price: 49,
     images: ["https://i.ibb.co/PvBVWKDc/Untitled-2.jpg", "https://i.ibb.co/ksSGrhs5/IMG-20250719-192946382-HDR.jpg"]
   },
   {
