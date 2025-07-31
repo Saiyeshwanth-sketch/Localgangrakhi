@@ -1,16 +1,9 @@
-/* Import the Blue Cherries font */
-@font-face {
-  font-family: 'Blue Cherries';
-  src: url('BlueCherries.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  font-family: 'Blue Cherries', sans-serif;
+  font-family: 'Cherry Swash', cursive;
   margin: 0;
   padding: 0;
   background: #fff8f0;
+  color: #333;
 }
 
 header {
@@ -50,73 +43,135 @@ header {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-family: 'Blue Cherries', sans-serif;
 }
 
 .controls {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 200px;
-  font-family: 'Blue Cherries', sans-serif;
-}
-
-button {
-  padding: 0.6rem 1.2rem;
-  background-color: #4CAF50;
+.controls button {
+  padding: 5px 10px;
+  background-color: #ff6978;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 8px;
   cursor: pointer;
-  font-family: 'Blue Cherries', sans-serif;
 }
 
-button:hover {
-  background-color: #45a049;
+.upi-section {
+  text-align: center;
+  margin: 2rem 0;
 }
 
-/* Order Summary Section */
-#orderSummary {
-  background: #f9f9f9;
-  padding: 1rem;
-  margin: 1rem;
+.upi-image {
+  max-width: 200px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-top: 10px;
 }
 
-#orderSummary h2 {
+#whatsapp-contact {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.whatsapp-link {
+  color: #25D366;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-form {
+  text-align: center;
+  margin: 2rem;
+}
+
+.order-form h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
-  text-align: center;
 }
 
-#summaryList {
+.order-form input,
+.order-form textarea,
+.order-form button {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.order-form button {
+  background-color: #ff6978;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#formStatus {
+  margin-top: 10px;
+  color: green;
+}
+
+/* ✅ Order preview section styling */
+.order-preview {
+  background: #f9f9ff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 400px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.order-preview ul {
   list-style: none;
-  padding: 0;
-  margin-bottom: 1rem;
+  padding-left: 0;
+  margin: 0;
 }
 
-#summaryList li {
-  padding: 0.5rem;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-}
-
-#summaryTotal {
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-  color: #000;
+.order-preview ul li {
+  padding: 4px 0;
+  border-bottom: 1px dashed #ccc;
 }
