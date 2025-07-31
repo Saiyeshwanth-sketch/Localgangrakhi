@@ -1,17 +1,19 @@
+/* Base styling */
 body {
-  font-family: 'Cherry Swash', cursive;
+  font-family: 'Peace Sans', sans-serif;
   margin: 0;
   padding: 0;
   background: #fff8f0;
-  color: #333;
 }
 
+/* Header */
 header {
   text-align: center;
   padding: 1rem;
   background: #ffdde0;
 }
 
+/* Product grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -35,6 +37,7 @@ header {
   cursor: pointer;
 }
 
+/* Toggle buttons for product views */
 .toggle-btn {
   margin-top: 0.5rem;
   padding: 0.4rem 1rem;
@@ -61,17 +64,19 @@ header {
   cursor: pointer;
 }
 
+/* UPI Section */
 .upi-section {
   text-align: center;
   margin: 2rem 0;
 }
 
 .upi-image {
-  max-width: 200px;
+  max-width: 220px;
   border-radius: 12px;
   margin-top: 10px;
 }
 
+/* WhatsApp Contact */
 #whatsapp-contact {
   text-align: center;
   margin: 20px 0;
@@ -86,6 +91,14 @@ header {
   gap: 8px;
 }
 
+#whatsapp-contact p {
+  font-family: 'Cherry Swash', cursive;
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Image Modal */
 .modal {
   display: none;
   position: fixed;
@@ -117,13 +130,14 @@ header {
   cursor: pointer;
 }
 
+/* Order Form */
 .order-form {
   text-align: center;
   margin: 2rem;
 }
 
 .order-form h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
@@ -150,28 +164,4 @@ header {
 #formStatus {
   margin-top: 10px;
   color: green;
-}
-
-/* ✅ Order preview section styling */
-.order-preview {
-  background: #f9f9ff;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 10px auto;
-  width: 80%;
-  max-width: 400px;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.order-preview ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.order-preview ul li {
-  padding: 4px 0;
-  border-bottom: 1px dashed #ccc;
 }
