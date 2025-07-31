@@ -1,4 +1,3 @@
-// Initialize EmailJS
 emailjs.init("F_3Ss3kxhTAf4Vvxe");
 
 const products = [
@@ -117,17 +116,31 @@ function updateQty(index, delta) {
 }
 
 function updateCartDisplay() {
+  const summaryList = document.getElementById("summaryList");
+  const summaryTotal = document.getElementById("summaryTotal");
+  const orderItemsInput = document.getElementById("orderItems");
+  const orderTotalInput = document.getElementById("orderTotal");
+
+  summaryList.innerHTML = "";
+
   const items = [];
   let total = 0;
+
   for (const name in cart) {
     const item = cart[name];
     if (item.quantity > 0) {
+      const li = document.createElement("li");
+      li.textContent = `${name} × ${item.quantity} = ₹${item.price * item.quantity}`;
+      summaryList.appendChild(li);
+
       items.push(`${name} × ${item.quantity} = ₹${item.price * item.quantity}`);
       total += item.price * item.quantity;
     }
   }
-  document.getElementById("orderItems").value = items.join("\n");
-  document.getElementById("orderTotal").value = `₹${total}`;
+
+  summaryTotal.textContent = total;
+  orderItemsInput.value = items.join("\n");
+  orderTotalInput.value = `₹${total}`;
 }
 
 function showFullImage(url) {
@@ -143,26 +156,20 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   e.preventDefault();
   const form = this;
 
-  // Prepare order summary and total
-  const orderSummary = Object.entries(cart)
-    .filter(([_, item]) => item.quantity > 0)
-    .map(([name, item]) =>
-      `${name} - ₹${item.price} × ${item.quantity} = ₹${item.price * item.quantity}`
-    ).join('\n');
-
-  const totalAmount = Object.values(cart)
-    .reduce((total, item) => total + (item.price * item.quantity), 0);
-
-  // Set values in hidden form fields
-  document.getElementById("orderItems").value = orderSummary;
-  document.getElementById("orderTotal").value = `₹${totalAmount}`;
+  // Prepare and sync order summary
+  updateCartDisplay();
 
   // Send email via EmailJS
   emailjs.sendForm('service_9hm9wee', 'template_ga2ypz9', form)
     .then(() => {
       document.getElementById("formStatus").textContent = "Order sent successfully!";
       form.reset();
-      for (const key in cart) delete cart[key];
+
+      for (const key in cart) {
+        cart[key].quantity = 0;
+      }
+
+      renderProducts(); // reset quantities in UI
       updateCartDisplay();
     })
     .catch(error => {
