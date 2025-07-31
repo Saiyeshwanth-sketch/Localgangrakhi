@@ -28,6 +28,9 @@
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="24" />
       Contact for more Rakhis: 7702442422
     </a>
+    <p style="font-family: 'Cherry Swash', cursive; font-size: 16px; margin-top: 5px;">
+      For more Rakhi collections, contact us on WhatsApp!
+    </p>
   </section>
 
   <!-- Order Form -->
@@ -39,14 +42,7 @@
       <input type="text" name="phone" placeholder="WhatsApp Number" required />
       <textarea name="address" placeholder="Full Address" required></textarea>
 
-      <!-- ✅ Visible Order Preview -->
-      <div id="orderPreview" class="order-preview">
-        <h3>Your Selected Items</h3>
-        <ul id="orderList"></ul>
-        <p><strong>Total:</strong> ₹<span id="orderAmount">0</span></p>
-      </div>
-
-      <!-- Hidden fields for JS -->
+      <!-- Hidden fields for JS to populate -->
       <input type="hidden" name="orderItems" id="orderItems" />
       <input type="hidden" name="orderTotal" id="orderTotal" />
 
@@ -61,6 +57,8 @@
     <img id="fullImg" class="modal-content" />
   </div>
 
+  <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>
