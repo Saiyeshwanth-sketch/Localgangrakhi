@@ -177,30 +177,32 @@ document.querySelector(".close").onclick = () => {
 
 document.getElementById("orderForm").addEventListener("submit", function (e) {
   e.preventDefault();
+
   const form = this;
 
   const orderSummary = Object.entries(cart)
     .filter(([_, item]) => item.quantity > 0)
     .map(([name, item]) => `${name} - ₹${item.price} × ${item.quantity} = ₹${item.price * item.quantity}`)
-    .join('\n');
+    .join("\n");
 
   const totalAmount = Object.values(cart)
-    .reduce((total, item) => total + (item.price * item.quantity), 0);
+    .reduce((sum, item) => sum + (item.quantity * item.price), 0);
 
   document.getElementById("orderItems").value = orderSummary;
   document.getElementById("orderTotal").value = `₹${totalAmount}`;
 
-  emailjs.sendForm('service_9hm9wee', 'template_ga2ypz9', form)
+  emailjs.sendForm("service_9hm9wee", "template_ga2ypz9", form)
     .then(() => {
       document.getElementById("formStatus").textContent = "Order sent successfully!";
       form.reset();
       for (const key in cart) delete cart[key];
-      updateCartDisplay();
+      renderProducts(); // Reset UI
     })
-    .catch(error => {
-      console.error(error);
-      document.getElementById("formStatus").textContent = "Failed to send order. Try again.";
+    .catch((error) => {
+      console.error("EmailJS error:", error);
+      document.getElementById("formStatus").textContent = "Failed to send order. Please try again.";
     });
 });
 
+// Initial render
 renderProducts();
