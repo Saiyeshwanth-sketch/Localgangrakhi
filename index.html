@@ -42,6 +42,13 @@
       <input type="text" name="phone" placeholder="WhatsApp Number" required />
       <textarea name="address" placeholder="Full Address" required></textarea>
 
+      <!-- Visible Order Summary -->
+      <div id="orderSummary" class="order-summary">
+        <h3>Your Order Summary</h3>
+        <ul id="summaryList"></ul>
+        <p><strong>Total: ₹<span id="summaryTotal">0</span></strong></p>
+      </div>
+
       <!-- Hidden fields for JS to populate -->
       <input type="hidden" name="orderItems" id="orderItems" />
       <input type="hidden" name="orderTotal" id="orderTotal" />
